@@ -1,0 +1,17 @@
+.wrapper {
+  background-color: #050A39;
+
+  .container {
+    width: 1240px;
+    margin: 0 auto;
+
+    .title {
+      max-width: 780px;
+      font-family: 'Syne';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 110px;
+      line-height: 100.4%;
+    }
+  }
+}
