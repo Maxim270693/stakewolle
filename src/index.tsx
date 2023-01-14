@@ -5,10 +5,13 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import App from './App';
 import Blog from "./featchers/Blog/Blog";
+import Login from "./featchers/Login/Login";
 import SignUp from "./featchers/SignUp/SignUp";
 import AboutUs from "./featchers/AboutUs/AboutUs";
 
 import './index.css';
+import {Provider} from "react-redux";
+import {store} from "./bll/store/store";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +30,10 @@ const router = createBrowserRouter([
         path: "/SignUp",
         element: (<SignUp/>),
     },
+    {
+        path: "/Login",
+        element: (<Login/>),
+    },
 ]);
 
 const root = ReactDOM.createRoot(
@@ -34,7 +41,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <RouterProvider router={router}/>
+        <Provider store={store}>
+            <RouterProvider router={router}/>
+        </Provider>
     </React.StrictMode>
 );
 

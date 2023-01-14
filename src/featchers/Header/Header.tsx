@@ -7,6 +7,7 @@ import headerPresent from '../../image/headerPresent.png'
 
 import style from './Header.module.scss';
 import {Link} from "react-router-dom";
+import Button from "../../components/Button/Button";
 
 const Header = () => {
     const [language, setLanguage] = useState('EN')
@@ -31,7 +32,7 @@ const Header = () => {
                 </div>
 
                 <div className={style.btnWrapper}>
-                    <button className={style.btn}>Staking platform</button>
+                    <Button onClick={() => {}}>Staking platform</Button>
                     <img src={headerPresent} alt="headerPresent" className={style.headerPresent}/>
                 </div>
             </div>
