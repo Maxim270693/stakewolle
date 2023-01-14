@@ -2,6 +2,12 @@ import {rootReducer} from "../bll/store/store";
 import {initialStateSignUp} from "../bll/reducers/signUpReducer";
 import {getEmail, getName, getPassword} from "../bll/actions/signUpActions";
 
+export type OnjType = {
+    name: string,
+    order: number
+    checked: boolean
+}
+
 export type RootStateType = ReturnType<typeof rootReducer>
 
 export type InitialStateSignUpType = typeof initialStateSignUp

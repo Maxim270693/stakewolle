@@ -12,6 +12,20 @@ import AboutUs from "./featchers/AboutUs/AboutUs";
 import './index.css';
 import {Provider} from "react-redux";
 import {store} from "./bll/store/store";
+import MockAdapter from "axios-mock-adapter";
+import axios from "axios";
+
+const mock = new MockAdapter(axios);
+
+mock.onPost("/register").reply((config) => {
+    const data = JSON.parse(config.data);
+    console.log('config in index.js', config)
+
+    if (data.username === 'maxim' && data.email === 'max@mail.ru' && data.password === '123123123') {
+        return [201]
+    }
+    return [401]
+});
 
 const router = createBrowserRouter([
     {

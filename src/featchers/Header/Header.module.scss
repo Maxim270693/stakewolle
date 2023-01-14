@@ -3,7 +3,7 @@
   box-shadow: rgb(255 255 255 / 35%) 0px 10px 10px -10px;
 
   .container {
-    width: 1240px;
+    width: 1620px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 60% 25% 15%;
@@ -27,7 +27,7 @@
         display: flex;
         align-items: center;
         text-align: center;
-        margin: 0 15px;
+        margin: 0 30px;
 
         .vector {
           width: 25px;
@@ -55,7 +55,7 @@
       .headerPresent {
         position: absolute;
         top: 5px;
-        right: 15px;
+        right: 70px;
         cursor: pointer;
       }
     }

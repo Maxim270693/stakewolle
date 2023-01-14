@@ -3,7 +3,7 @@
   background-color: #050A39;
 
   .container {
-    width: 1240px;
+    width: 1620px;
     margin: 0 auto;
     display: flex;
 
@@ -38,6 +38,17 @@
       font-weight: 700;
       font-size: 110px;
       line-height: 100.4%;
+    }
+
+    .meteoriteMiddle {
+      position: absolute;
+      top: 380px;
+      left: 311px;
+    }
+
+    .meteoriteBottom {
+      margin-top: 640px;
+      margin-bottom: 65px;
     }
   }
 }

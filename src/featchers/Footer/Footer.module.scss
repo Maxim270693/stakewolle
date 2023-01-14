@@ -1,0 +1,76 @@
+.wrapper {
+  background-color: #0E094C;
+  color: #FFFFFF;
+  font-family: 'Syne';
+  font-style: normal;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    width: 1620px;
+    margin: 0 auto;
+
+    .btn {
+      width: 270px;
+      background-color: #246FFF;
+      padding: 12px 10px;
+      justify-content: center;
+      margin-bottom: 25px;
+
+      &:hover {
+        box-shadow: rgb(255 255 255 / 35%) 0px 0px 22px;
+      }
+    }
+
+    .btnLogin {
+      width: 270px;
+      background-color: inherit;
+      justify-content: center;
+      margin-bottom: 25px;
+      color: white;
+      border: 1px solid #FFFFFF;
+    }
+
+    .footerLogo {
+      margin-bottom: 60px;
+      display: flex;
+
+      .footerLogoText {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 134.4%;
+        display: flex;
+        align-items: center;
+      }
+
+      .footerLogoTextItem {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .footerTitle {
+      margin-bottom: 40px;
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 114.4%;
+      display: flex;
+      align-items: center;
+      text-decoration-line: underline;
+      margin-top: 60px;
+    }
+
+    .footerText {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      text-decoration-line: underline;
+      margin-bottom: 15px;
+    }
+  }
+}
