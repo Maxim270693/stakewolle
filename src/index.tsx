@@ -19,7 +19,6 @@ const mock = new MockAdapter(axios);
 
 mock.onPost("/register").reply((config) => {
     const data = JSON.parse(config.data);
-    console.log('config in index.js', config)
 
     if (data.username === 'maxim' && data.email === 'max@mail.ru' && data.password === '123123123') {
         return [201]

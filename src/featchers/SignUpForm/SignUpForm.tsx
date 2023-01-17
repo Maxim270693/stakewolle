@@ -14,7 +14,7 @@ import emailImg from '../../image/emailForm.png';
 import passwordImg from '../../image/passwordForm.png';
 
 import {InitialStateSignUpType, OnjType, RootStateType} from "../../types/types";
-import {getEmail, getName, getPassword} from "../../bll/actions/signUpActions";
+import {getEmail, getName, getPassword, isRegisterAC} from "../../bll/actions/signUpActions";
 
 import style from './SignUpForm.module.scss';
 import axios from "axios";
@@ -63,6 +63,7 @@ const SignUpForm = () => {
                 checkedSubscribe: checkBoxes[1].checked
             })
             if (response && response.status === 201) {
+                dispatch(isRegisterAC(true))
                 alert('Вы зарегистрированны!')
                 navigate('/login')
             }
