@@ -40,12 +40,15 @@ const SignUp = () => {
                             <img src={shark} alt="shark"/>
                         </div>
 
-                        <div>
+                        <div className={style.sharkBlockItem}>
                             <div className={style.text}>
                                 Do you have any comments on how we can improve?
                                 Share your ideas and thoughts about our products and services.
                             </div>
-                            <Button>Watch video about the product</Button>
+
+                            <a href="https://www.youtube.com/@Stakewolle" target="_blank" rel="noopener noreferrer">
+                                <Button>Watch video about the product</Button>
+                            </a>
                         </div>
                     </div>
                 </div>

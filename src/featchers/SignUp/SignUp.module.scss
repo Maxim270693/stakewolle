@@ -29,6 +29,14 @@
       display: flex;
       align-items: center;
       margin-left: 35px;
+
+      .sharkBlockItem {
+        z-index: 9;
+
+        a {
+          text-decoration: none;
+        }
+      }
     }
 
     .title {
