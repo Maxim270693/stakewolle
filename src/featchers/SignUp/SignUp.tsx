@@ -1,16 +1,17 @@
 import React from 'react';
+
 import Header from "../Header/Header";
 import Button from "../../components/Button/Button";
+import Footer from "../Footer/Footer";
 import SignUpForm from "../SignUpForm/SignUpForm";
 
-import shark from '../../image/sharkSignUp.png';
-import planet from '../../image/planetSignUp.png';
-import meteorite from '../../image/meteoriteLeft.png';
-import meteoriteBottom from '../../image/meteoriteBottom.png';
-import meteoriteMiddle from '../../image/meteoriteMiddle.png';
+import shark from '../../images/sharkSignUp.png';
+import planet from '../../images/planetSignUp.png';
+import meteorite from '../../images/meteoriteLeft.png';
+import meteoriteBottom from '../../images/meteoriteBottom.png';
+import meteoriteMiddle from '../../images/meteoriteMiddle.png';
 
 import style from './SignUp.module.scss';
-import Footer from "../Footer/Footer";
 
 const SignUp = () => {
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 import {OnjType} from "../../types/types";
 
-import style from "../../featchers/SignUpForm/SignUpForm.module.scss";
+import style from "./Checkbox.module.scss";
 
 type CheckboxType = {
     checkBox: any

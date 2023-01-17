@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 
-import logo from '../../image/logo.png'
-import vector from '../../image/vector.png'
-import arrowBottom from '../../image/arrowBottom.png'
-import headerPresent from '../../image/headerPresent.png'
+import logo from '../../images/logo.png'
+import vector from '../../images/vector.png'
+import arrowBottom from '../../images/arrowBottom.png'
+import headerPresent from '../../images/headerPresent.png'
 
 import style from './Header.module.scss';
 import {Link} from "react-router-dom";

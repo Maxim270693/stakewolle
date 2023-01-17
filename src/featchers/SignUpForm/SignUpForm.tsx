@@ -1,22 +1,16 @@
 import React, {ChangeEvent, FormEvent, useMemo, useState} from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import Button from "../../components/Button/Button";
+
 import InputForm from "../../components/InputForm/InputForm";
-import {Checkbox} from "../../components/Checkbox/Checkbox";
+import Form from "../Form/Form";
 
-import apple from '../../image/socialApple.png';
-import google from '../../image/socialGoogle.png';
-import faceBook from '../../image/socialFaceBook.png';
-
-import userImg from '../../image/userForm.png';
-import emailImg from '../../image/emailForm.png';
-import passwordImg from '../../image/passwordForm.png';
+import userImg from '../../images/userForm.png';
+import emailImg from '../../images/emailForm.png';
+import passwordImg from '../../images/passwordForm.png';
 
 import {InitialStateSignUpType, OnjType, RootStateType} from "../../types/types";
 import {getEmail, getName, getPassword, isRegisterAC} from "../../bll/actions/signUpActions";
-
-import style from './SignUpForm.module.scss';
 import axios from "axios";
 
 const SignUpForm = () => {
@@ -73,15 +67,15 @@ const SignUpForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit} className={style.wrapper}>
-            <h2 className={style.title}>Create your account</h2>
-
-            <div className={style.text}>
-                Already have an account?
-                <Link to='/Login' className={style.textItem}>
-                    Log in
-                </Link>
-            </div>
+        <Form onSubmit={handleSubmit}
+              title="Create your account"
+              buttonName="Create account"
+              link="Login"
+              checkBoxes={checkBoxes}
+              setCheckBoxes={setCheckBoxes}
+              text="Already have an account?"
+              isVerified={isVerified}
+        >
 
             <InputForm
                 type="text"
@@ -110,33 +104,7 @@ const SignUpForm = () => {
                 value={password}
                 onChange={onChangePassword}
             />
-
-            <div>
-                {checkBoxes.map((checkBox, index) => (
-                    <div key={index} className={style.checked}>
-                        <Checkbox
-                            checkBox={checkBox}
-                            onChange={(item: OnjType) => {
-                                setCheckBoxes(checkBoxes.map((d) => (d.order === item.order ? item : d)));
-                            }}
-                        />
-                    </div>
-                ))}
-            </div>
-
-            <Button type="submit" disabled={!isVerified}
-                    className={!isVerified ? style.disabled : style.btn}>
-                Create account
-            </Button>
-
-            <div className={style.footerText}>Or sign in with socials</div>
-
-            <div>
-                <img src={google} alt="google" className={style.footerImg}/>
-                <img src={faceBook} alt="faceBook" className={style.footerImg}/>
-                <img src={apple} alt="apple" className={style.footerImg}/>
-            </div>
-        </form>
+        </Form>
     );
 };
 

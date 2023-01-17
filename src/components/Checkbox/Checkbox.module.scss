@@ -1,0 +1,26 @@
+.inputChecked {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #C6C6C6;
+  border-radius: 5px;
+  outline: 1px solid #C6C6C6;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+input[type='checkbox']:checked:after {
+  content: "✔";
+  color: white;
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.text {
+  font-family: 'Syne';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 134.4%;
+  margin-left: 30px;
+  color: #C6C6C6;
+
+}

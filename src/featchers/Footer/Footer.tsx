@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import Button from "../../components/Button/Button";
 
-import footerLogo from '../../image/footerLogo.png';
+import footerLogo from '../../images/footerLogo.png';
 
 import style from './Footer.module.scss';
 
