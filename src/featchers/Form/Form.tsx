@@ -1,14 +1,16 @@
 import React, {FormEvent, ReactNode} from 'react';
+import {useSelector} from "react-redux";
 import {Link} from "react-router-dom";
 
 import Button from "../../components/Button/Button";
+import Spinner from "../../components/Spinner/Spinner";
 import {Checkbox} from "../../components/Checkbox/Checkbox";
 
 import apple from "../../images/socialApple.png";
 import google from "../../images/socialGoogle.png";
 import faceBook from "../../images/socialFaceBook.png";
 
-import {OnjType} from "../../types/types";
+import {OnjType, RootStateType} from "../../types/types";
 import classNames from "classnames";
 import style from './Form.module.scss';
 
@@ -37,6 +39,7 @@ const Form = ({
                   buttonName,
                   isVerified
               }: FormPropsType) => {
+    const isLoading = useSelector<RootStateType, boolean>(state => state.signUp.isLoading)
 
     return (
         <form onSubmit={onSubmit} className={classNames(style.wrapper, className)}>
@@ -66,11 +69,13 @@ const Form = ({
 
             {
                 buttonName
-                && <Button type="submit" disabled={!isVerified}
-                           className={!isVerified ? style.disabled : style.btn}
-                >
-                    {buttonName}
-                </Button>
+                && isLoading
+                    ? <Spinner/>
+                    : <Button type="submit" disabled={!isVerified}
+                              className={!isVerified ? style.disabled : style.btn}
+                    >
+                        {buttonName}
+                    </Button>
             }
 
             <div className={style.footerText}>Or sign in with socials</div>

@@ -1,7 +1,7 @@
 import React, {ChangeEvent, FormEvent, useMemo, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {getName, getPassword} from "../../bll/actions/signUpActions";
+import {getName, getPassword, isLoadingAC} from "../../bll/actions/signUpActions";
 
 import Form from "../Form/Form";
 import InputForm from "../../components/InputForm/InputForm";
@@ -42,6 +42,7 @@ const LoginForm = () => {
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        dispatch(isLoadingAC(true))
 
         try {
             const response = await axios.post("/login", {
@@ -55,6 +56,8 @@ const LoginForm = () => {
             }
         } catch (e) {
             alert('Упс, что-то пошло не так :(')
+        } finally {
+            dispatch(isLoadingAC(false))
         }
     }
 

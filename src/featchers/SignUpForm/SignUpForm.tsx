@@ -10,7 +10,13 @@ import emailImg from '../../images/emailForm.png';
 import passwordImg from '../../images/passwordForm.png';
 
 import {InitialStateSignUpType, OnjType, RootStateType} from "../../types/types";
-import {getEmail, getName, getPassword, isRegisterAC} from "../../bll/actions/signUpActions";
+import {
+    getEmail,
+    getName,
+    getPassword,
+    isLoadingAC,
+    isRegisterAC
+} from "../../bll/actions/signUpActions";
 import axios from "axios";
 
 const SignUpForm = () => {
@@ -47,6 +53,7 @@ const SignUpForm = () => {
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        dispatch(isLoadingAC(true))
 
         try {
             const response = await axios.post("/register", {
@@ -63,6 +70,8 @@ const SignUpForm = () => {
             }
         } catch (e) {
             alert('Упс, что-то пошло не так :(')
+        } finally {
+            dispatch(isLoadingAC(false))
         }
     }
 

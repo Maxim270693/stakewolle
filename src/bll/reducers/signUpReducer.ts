@@ -1,5 +1,11 @@
 import {ActionsType, InitialStateSignUpType} from "../../types/types";
-import {GET_EMAIL, GET_PASSWORD, GET_USERNAME, IS_REGISTER} from "../../constants/constants";
+import {
+    GET_EMAIL,
+    GET_PASSWORD,
+    GET_USERNAME,
+    IS_LOADING,
+    IS_REGISTER
+} from "../../constants/constants";
 
 export const initialStateSignUp = {
     username: '',
@@ -19,6 +25,8 @@ export const SignUpReducer = (state = initialStateSignUp, action: ActionsType): 
             return {...state, password: action.payload}
         case IS_REGISTER:
             return {...state, isRegister: action.payload}
+        case IS_LOADING:
+            return {...state, isLoading: action.payload}
         default:
             return state
     }

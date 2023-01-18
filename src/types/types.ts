@@ -4,7 +4,8 @@ import {
     getEmail,
     getName,
     getPassword,
-    isRegisterAC
+    isRegisterAC,
+    isLoadingAC,
 } from "../bll/actions/signUpActions";
 
 export type OnjType = {
@@ -21,9 +22,11 @@ type GetNameActionType = ReturnType<typeof getName>
 type GetEmailActionType = ReturnType<typeof getEmail>
 type GetPasswordActionType = ReturnType<typeof getPassword>
 type IsRegisterActionType = ReturnType<typeof isRegisterAC>
+type IsLoadingActionType = ReturnType<typeof isLoadingAC>
 
 export type ActionsType =
     GetNameActionType
     | GetEmailActionType
     | GetPasswordActionType
     | IsRegisterActionType
+    | IsLoadingActionType
